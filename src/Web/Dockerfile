@@ -13,8 +13,7 @@ WORKDIR /app
 COPY *.sln .
 COPY . .
 WORKDIR /app/src/Web
-RUN dotnet restore
-
+RUN dotnet restore --ignore-failed-sources
 RUN dotnet publish -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
