@@ -1,6 +1,7 @@
 version: '3.4'
 services:
  eshopwebmvc:
+   iamge: 767398037269.dkr.ecr.us-east-1.amazonaws.com/cloudshirtrepo:web
    environment:
      - ASPNETCORE_ENVIRONMENT=Docker
      - ASPNETCORE_URLS=http://+:80
@@ -9,7 +10,9 @@ services:
    volumes:
      - ~/.aspnet/https:/root/.aspnet/https:ro
      - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+     
  eshoppublicapi:
+   iamge: 767398037269.dkr.ecr.us-east-1.amazonaws.com/cloudshirtrepo:publicapi
    environment:
      - ASPNETCORE_ENVIRONMENT=Docker
      - ASPNETCORE_URLS=http://+:80
